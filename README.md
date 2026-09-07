@@ -208,3 +208,5 @@ Thus design of BAND STOP FIR digital filter using-Hamming-Window waveforms were 
 <img width="760" height="700" alt="image" src="https://github.com/user-attachments/assets/93d54c70-5571-4829-a167-039499ffdfe5" />
 <img width="573" height="776" alt="image" src="https://github.com/user-attachments/assets/cf31d6b8-016d-4b5f-a8c1-1b018401b74d" />
 <img width="567" height="812" alt="image" src="https://github.com/user-attachments/assets/f41ab509-6fc5-4a80-9182-1bc6df29842f" />
+# RESULT: 
+Thus design of BAND STOP FIR digital filter using-Hamming-Window waveforms were plotted and output was verified.
