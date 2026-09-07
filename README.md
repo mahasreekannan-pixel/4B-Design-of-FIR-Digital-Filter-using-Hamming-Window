@@ -103,9 +103,49 @@ Thus design of HIGH pass FIR digital filter using-Hamming-Window waveforms were 
 PC installed with SCILAB. 
 
 # PROGRAM: 
+```
+clc ; 
+close ; 
+M=input('Enter the Odd Filter Length ='); 
+Wc=input('Enter the Digital Cut off frequency ='); 
+Wc2=Wc(2); 
+Wc1=Wc(1); 
+alpha= (M -1)/2 // Center Value 
+for n = 1:M 
+if (n ==alpha+1) 
+hd(n) =(Wc2-Wc1)/%pi ; 
+else 
+hd(n) =((sin(Wc2 *((n -1)-alpha)))-(sin(Wc1 *((n -1)-alpha))))/(((n -1)-alpha)*%pi); 
+end 
+end 
+// Hamming Window 
+for n = 1:M 
+W(n) = 0.54-(0.46*cos((2*%pi*(n-1))/(M-1))); 
+end 
+//Windowing filter coefficients 
+h = hd.*W; 
+disp(h,'Filter Coefficients are') 
+[hzm,fr]= frmag (h,256) ; 
+subplot(2 ,1 ,1) 
+plot(2*fr, hzm) 
+xlabel( ' Normalized Digital Frequency w'); 
+ylabel( 'Magnitude '); 
+title( ' Frequency Response of FIR BPF using Hamming Window ') 
+hzm_dB = 20* log10 (hzm); 
+subplot (2 ,1 ,2); 
+plot(2*fr , hzm_dB); 
+xlabel( ' Normalized Digital Frequency W' ); 
+ylabel( 'Magnitude in dB'); 
+title('Frequency Response of FIR BPF using Hamming Window');
+```
 
+# Manual Calculation :
+<img width="1481" height="1600" alt="image" src="https://github.com/user-attachments/assets/0acd2cce-1f43-4518-9d56-e709324f0131" />
+<img width="858" height="1427" alt="image" src="https://github.com/user-attachments/assets/54cf4022-f197-4819-b6dd-aa1559174ff1" />
 
 # OUTPUT: 
+<img width="760" height="700" alt="image" src="https://github.com/user-attachments/assets/93d54c70-5571-4829-a167-039499ffdfe5" />
+<img width="573" height="776" alt="image" src="https://github.com/user-attachments/assets/cf31d6b8-016d-4b5f-a8c1-1b018401b74d" />
 
 
 # RESULT: 
